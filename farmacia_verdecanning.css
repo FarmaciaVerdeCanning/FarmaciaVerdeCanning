@@ -1,117 +1,177 @@
 body{
-font-family: Arial, Helvetica, sans-serif;
+
+font-family:'Poppins', sans-serif;
 margin:0;
 background:#f4f7f5;
 color:#1f2d1f;
-scroll-behavior:smooth;
+
 }
 
 .header{
+
 background:linear-gradient(135deg,#1f6b45,#2e8b57);
-color:white;
 text-align:center;
+color:white;
+
 }
 
 .logo-area{
+
 padding:40px 20px;
+
 }
 
 .logo{
-width:180px;
-margin-bottom:10px;
+
+width:220px;
+
 }
+
+.subtitle{
+
+opacity:0.9;
+
+}
+
+/* MENU */
 
 .menu{
+
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+padding:20px;
 background:#145c3a;
-padding:15px;
+
 }
 
-.menu a{
+.menu-item{
+
+background:#1f6b45;
+padding:12px 20px;
+border-radius:8px;
 color:white;
 text-decoration:none;
-margin:0 15px;
-font-weight:bold;
+font-weight:500;
 transition:0.3s;
+
 }
 
-.menu a:hover{
-opacity:0.7;
+.menu-item:hover{
+
+background:#2e8b57;
+transform:translateY(-2px);
+
 }
+
+/* HERO */
 
 .hero{
+
 background:#e8f5ec;
 padding:80px 20px;
 text-align:center;
+
 }
 
+/* SECTIONS */
+
 .section{
+
 padding:70px 20px;
 text-align:center;
+
 }
 
 .white{
+
 background:white;
+
 }
 
 .green{
+
 background:#e8f5ec;
+
 }
 
 h2{
+
+font-weight:700;
+font-size:28px;
 color:#1f6b45;
-margin-bottom:30px;
+
 }
 
 .text{
+
 max-width:700px;
 margin:auto;
-line-height:1.6;
+line-height:1.7;
+
 }
 
+/* CARD */
+
 .card{
+
 background:white;
 max-width:420px;
 margin:auto;
 padding:30px;
 border-radius:12px;
 box-shadow:0 10px 25px rgba(0,0,0,0.15);
-transition:0.3s;
+
 }
 
-.card:hover{
-transform:translateY(-6px);
-}
+/* OBRAS SOCIALES */
 
 .grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
 gap:25px;
 max-width:900px;
 margin:auto;
+
 }
 
 .grid img{
+
 width:100%;
+height:80px;
+object-fit:contain;
 background:white;
-padding:12px;
+padding:10px;
 border-radius:10px;
 box-shadow:0 6px 18px rgba(0,0,0,0.12);
 transition:0.3s;
+
 }
 
 .grid img:hover{
-transform:scale(1.08);
+
+transform:scale(1.05);
+
 }
 
+/* MAPA */
+
 iframe{
+
 width:100%;
 max-width:650px;
 height:350px;
 border:0;
 border-radius:10px;
+
 }
 
+/* INSTAGRAM */
+
 .instagram-btn{
+
 position:fixed;
 bottom:20px;
 right:20px;
@@ -122,33 +182,35 @@ border-radius:30px;
 text-decoration:none;
 font-weight:bold;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
-transition:0.3s;
+
 }
 
-.instagram-btn:hover{
-background:#2e8b57;
-}
+/* FOOTER */
 
 footer{
+
 background:#1f6b45;
 color:white;
 text-align:center;
 padding:20px;
+
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
-.menu a{
-display:block;
-margin:10px 0;
+.menu{
+
+flex-direction:column;
+align-items:center;
+
 }
 
 .logo{
-width:140px;
-}
 
-.section{
-padding:50px 15px;
+width:180px;
+
 }
 
 }
