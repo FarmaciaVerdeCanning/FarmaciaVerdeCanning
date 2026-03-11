@@ -1,128 +1,117 @@
 body{
-
 font-family: Arial, Helvetica, sans-serif;
 margin:0;
 background:#f4f7f5;
-color:#1e2d1e;
-
+color:#1f2d1f;
+scroll-behavior:smooth;
 }
 
-header{
-
+.header{
 background:linear-gradient(135deg,#1f6b45,#2e8b57);
 color:white;
 text-align:center;
-
 }
 
 .logo-area{
-
 padding:40px 20px;
-
 }
 
 .logo{
-
-width:160px;
+width:180px;
 margin-bottom:10px;
-
 }
 
-nav{
-
+.menu{
 background:#145c3a;
 padding:15px;
-
 }
 
-nav a{
-
+.menu a{
 color:white;
 text-decoration:none;
 margin:0 15px;
 font-weight:bold;
-
+transition:0.3s;
 }
 
-nav a:hover{
-
-opacity:0.8;
-
+.menu a:hover{
+opacity:0.7;
 }
 
 .hero{
-
+background:#e8f5ec;
 padding:80px 20px;
 text-align:center;
-background:#e8f5ec;
-
 }
 
-section{
-
+.section{
 padding:70px 20px;
 text-align:center;
+}
 
+.white{
+background:white;
+}
+
+.green{
+background:#e8f5ec;
 }
 
 h2{
-
 color:#1f6b45;
 margin-bottom:30px;
-
 }
 
 .text{
-
 max-width:700px;
 margin:auto;
 line-height:1.6;
-
 }
 
 .card{
-
 background:white;
 max-width:420px;
 margin:auto;
 padding:30px;
 border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:0.3s;
+}
 
+.card:hover{
+transform:translateY(-6px);
 }
 
 .grid{
-
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
 gap:25px;
-max-width:800px;
+max-width:900px;
 margin:auto;
-
 }
 
 .grid img{
-
 width:100%;
 background:white;
-padding:10px;
+padding:12px;
 border-radius:10px;
-box-shadow:0 6px 18px rgba(0,0,0,0.1);
+box-shadow:0 6px 18px rgba(0,0,0,0.12);
+transition:0.3s;
+}
 
+.grid img:hover{
+transform:scale(1.08);
 }
 
 iframe{
-
 width:100%;
 max-width:650px;
 height:350px;
 border:0;
 border-radius:10px;
-
 }
 
-.instagram{
-
+.instagram-btn{
 position:fixed;
 bottom:20px;
 right:20px;
@@ -133,37 +122,33 @@ border-radius:30px;
 text-decoration:none;
 font-weight:bold;
 box-shadow:0 5px 15px rgba(0,0,0,0.2);
-
+transition:0.3s;
 }
 
-.instagram:hover{
-
+.instagram-btn:hover{
 background:#2e8b57;
-
 }
 
 footer{
-
 background:#1f6b45;
 color:white;
 text-align:center;
 padding:20px;
-
 }
 
 @media(max-width:768px){
 
-nav a{
-
+.menu a{
 display:block;
 margin:10px 0;
-
 }
 
 .logo{
+width:140px;
+}
 
-width:120px;
-
+.section{
+padding:50px 15px;
 }
 
 }
