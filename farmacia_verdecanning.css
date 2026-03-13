@@ -9,13 +9,18 @@ color:#1f2d1f;
 
 .header{
 background:#2e8b57;
-padding:20px;
+padding:25px 20px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
+/* LOGO */
+
 .logo{
-width:90px;
+height:130px;
+width:auto;
+display:block;
+margin:auto;
 }
 
 /* MENU */
@@ -24,7 +29,7 @@ width:90px;
 display:flex;
 justify-content:center;
 gap:12px;
-margin-top:15px;
+margin-top:10px;
 flex-wrap:wrap;
 }
 
@@ -237,8 +242,10 @@ height:60px;
 padding:12px;
 }
 
+/* LOGO MAS GRANDE EN CELULAR */
+
 .logo{
-width:70px;
+height:90px;
 }
 
 }
