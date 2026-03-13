@@ -9,32 +9,12 @@ color:#1f2d1f;
 
 .header{
 background:#2e8b57;
-color:white;
-padding:25px 15px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
-}
-
-.header-top{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
+padding:20px;
 text-align:center;
 }
 
 .logo{
-width:85px;
-}
-
-.header-text h1{
-margin:0;
-font-weight:700;
-}
-
-.header-text p{
-margin:5px 0 0 0;
-font-size:14px;
+width:90px;
 }
 
 /* MENU */
@@ -43,7 +23,7 @@ font-size:14px;
 display:flex;
 justify-content:center;
 gap:12px;
-margin-top:18px;
+margin-top:15px;
 flex-wrap:wrap;
 }
 
@@ -51,10 +31,10 @@ flex-wrap:wrap;
 background:white;
 color:#2e8b57;
 text-decoration:none;
-padding:8px 14px;
+padding:8px 15px;
 border-radius:20px;
-font-size:14px;
 font-weight:500;
+font-size:14px;
 transition:0.2s;
 }
 
@@ -68,12 +48,12 @@ transform:translateY(-2px);
 
 .hero{
 text-align:center;
-padding:100px 20px;
+padding:90px 20px;
 background:linear-gradient(#e8f5ec,#ffffff);
 }
 
 .hero h2{
-font-size:36px;
+font-size:34px;
 margin-bottom:10px;
 }
 
@@ -94,51 +74,57 @@ margin:auto;
 line-height:1.6;
 }
 
-/* HORARIO */
+/* HORARIOS */
 
 .horario-grid{
 display:flex;
 justify-content:center;
-gap:25px;
+gap:30px;
 flex-wrap:wrap;
-margin-top:35px;
+margin-top:40px;
 }
 
 .horario-card{
 background:white;
-padding:25px;
+padding:30px;
 border-radius:12px;
-width:200px;
-box-shadow:0 6px 20px rgba(0,0,0,0.1);
+width:220px;
+border-top:5px solid #2e8b57;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
 transition:0.2s;
 }
 
-.horario-card:hover{
-transform:translateY(-5px);
+.horario-card h3{
+color:#2e8b57;
 }
 
-/* OBRAS */
+.horario-card:hover{
+transform:translateY(-6px);
+}
+
+/* OBRAS SOCIALES */
 
 .obras-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:25px;
 max-width:900px;
 margin:auto;
 }
 
 .obras-grid img{
 background:white;
-padding:15px;
-border-radius:10px;
-height:80px;
+padding:20px;
+border-radius:12px;
+height:90px;
 object-fit:contain;
+border:2px solid #2e8b57;
 box-shadow:0 6px 15px rgba(0,0,0,0.1);
 transition:0.2s;
 }
 
 .obras-grid img:hover{
-transform:translateY(-5px);
+transform:scale(1.05);
 }
 
 /* MAPA */
@@ -172,23 +158,36 @@ padding:20px;
 margin-top:40px;
 }
 
-/* WHATSAPP */
+/* BOTONES FLOTANTES */
 
-.whatsapp{
+.social-float{
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
-font-size:28px;
-width:60px;
-height:60px;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.social-float a{
+width:55px;
+height:55px;
 display:flex;
 align-items:center;
 justify-content:center;
 border-radius:50%;
+font-weight:bold;
+color:white;
 text-decoration:none;
 box-shadow:0 6px 20px rgba(0,0,0,0.2);
+}
+
+.whatsapp{
+background:#25D366;
+}
+
+.instagram{
+background:#E1306C;
 }
 
 /* MOBILE */
@@ -205,7 +204,7 @@ padding:7px 12px;
 }
 
 .horario-card{
-width:160px;
+width:180px;
 }
 
 .logo{
