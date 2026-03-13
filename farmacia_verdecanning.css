@@ -9,15 +9,15 @@ color:#1f2d1f;
 
 .header{
 background:#2e8b57;
-padding:25px 20px;
+padding:35px 20px 25px 20px;
 text-align:center;
 box-shadow:0 3px 10px rgba(0,0,0,0.1);
 }
 
-/* LOGO */
+/* LOGO GRANDE */
 
 .logo{
-height:130px;
+height:180px;
 width:auto;
 display:block;
 margin:auto;
@@ -29,7 +29,7 @@ margin:auto;
 display:flex;
 justify-content:center;
 gap:12px;
-margin-top:10px;
+margin-top:15px;
 flex-wrap:wrap;
 }
 
@@ -242,10 +242,10 @@ height:60px;
 padding:12px;
 }
 
-/* LOGO MAS GRANDE EN CELULAR */
+/* LOGO EN CELULAR */
 
 .logo{
-height:90px;
+height:120px;
 }
 
 }
