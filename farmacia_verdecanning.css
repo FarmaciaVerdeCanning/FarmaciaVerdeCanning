@@ -62,6 +62,17 @@ h2::after {
 }
 
 /* --- HEADER --- */
+#progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--secondary);
+  width: 0%;
+  transition: width 0.1s ease-out;
+  z-index: 2000;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -78,6 +89,17 @@ h2::after {
   align-items: center;
   box-shadow: var(--shadow-sm);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 1100;
 }
 
 .header.scrolled {
@@ -181,14 +203,47 @@ h2::after {
   text-align: center;
 }
 
-.green {
-  background-color: #f0f7f4;
+/* --- SERVICES ROW --- */
+.services-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
 }
 
-.text {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.15rem;
+.service-item {
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+.service-item i {
+  font-size: 2.5rem;
+  color: var(--primary);
+  background: var(--accent);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  transition: var(--transition);
+}
+
+.service-item:hover i {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--secondary);
+  color: var(--white);
+}
+
+.service-item h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary);
+}
+
+.service-item p {
+  font-size: 0.95rem;
   color: var(--text-muted);
 }
 
@@ -226,34 +281,44 @@ h2::after {
   margin: 0;
 }
 
-/* --- OBRAS SOCIALES --- */
+/* --- OBRAS SOCIALES (PREMIUM CLEAN) --- */
 .obras-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
   margin-top: 4rem;
+  padding: 0 10px;
 }
 
-.obras-grid img {
-  width: 100%;
-  height: 100px;
+.obra-card {
   background: var(--white);
+  height: 140px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1.5rem;
-  border-radius: 15px;
-  object-fit: contain;
-  box-shadow: var(--shadow-sm);
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: var(--transition);
-  border: 1px solid #eee;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
-.obras-grid img:hover {
-  filter: grayscale(0%);
+.obra-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(10, 77, 60, 0.08);
+}
+
+.obra-card img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: none;
   opacity: 1;
-  transform: scale(1.08);
-  box-shadow: var(--shadow-md);
-  border-color: var(--secondary);
+  /* Aggressive crop for dirty original JPGs */
+  clip-path: inset(4%); 
+  transform: scale(1.08); /* Re-scale slightly to fill the space after crop */
 }
 
 /* --- MAP & CONTACT --- */
@@ -261,6 +326,12 @@ h2::after {
   border-radius: var(--radius);
   overflow: hidden;
   box-shadow: var(--shadow-md);
+  filter: grayscale(0.2) contrast(1.1) hue-rotate(90deg); /* Subtle Emerald Filter */
+  transition: var(--transition);
+}
+
+.mapa:hover {
+  filter: none;
 }
 
 .contact-card {
@@ -333,22 +404,52 @@ footer {
   }
   
   .header {
-    justify-content: center;
+    justify-content: space-between; /* To keep logo left and menu right */
     padding: 10px 5%;
-    min-height: 70px;
+    min-height: 80px;
   }
   
   .logo { 
-    max-width: 150px; 
-    max-height: 60px;
+    max-width: 180px; 
+    max-height: 70px;
   }
   
-  .menu { display: none; } /* Consider adding a mobile menu if needed later */
+  .menu-toggle { 
+    display: block; 
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 85%;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    transition: 0.4s cubic-bezier(0.85, 0, 0.15, 1); 
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 1050;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu-btn {
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: center;
+    padding: 15px;
+  }
 
   .hero {
     height: auto;
     min-height: 75vh;
-    padding: 200px 20px 100px; /* Definitivo para móvil */
+    padding: 240px 20px 100px; /* Even more to fit the LARGER logo header */
   }
   
   .hero h2 { font-size: 2.2rem; line-height: 1.2; }
@@ -368,14 +469,14 @@ footer {
   }
 
   .obras-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns is safer for current card size */
+    gap: 1rem;
   }
   
-  .obras-grid img {
-    height: 60px;
-    padding: 10px;
-    border-radius: 12px;
+  .obra-card {
+    height: 100px; /* More compact for mobile */
+    padding: 0.8rem;
+    border-radius: 18px;
   }
 
   .contact-card {
