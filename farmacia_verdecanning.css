@@ -51,16 +51,18 @@ h2 {
   display: inline-block;
 }
 
-h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: var(--secondary);
-  border-radius: 2px;
+/* --- UTILITIES --- */
+.badge {
+  background: var(--accent);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 /* --- HEADER --- */
@@ -286,8 +288,8 @@ h2::after {
 /* --- SERVICES ROW --- */
 .services-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
   margin-top: 4rem;
 }
 
@@ -430,12 +432,59 @@ h2::after {
   font-size: 1.25rem;
 }
 
+/* --- CAMPAIGN SPOTLIGHT --- */
+.campaign-container {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.campaign-text { flex: 1.2; }
+.campaign-image { flex: 1; text-align: right; }
+
+.campaign-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 30px;
+  box-shadow: 0 40px 80px rgba(10, 77, 60, 0.2);
+  border: 8px solid rgba(255, 255, 255, 0.5); /* Glassy frame */
+  transition: var(--transition);
+  animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+.campaign-text .cta-btn.secondary {
+  background: var(--primary);
+  color: var(--white);
+  margin-top: 2rem;
+}
+
 /* --- FOOTER --- */
 footer {
   background: var(--primary);
   color: var(--white);
   padding: 60px 5%;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .campaign-container {
+    flex-direction: column-reverse; /* Put text first on mobile */
+    text-align: center;
+    gap: 3rem;
+  }
+  .campaign-image { text-align: center; }
+  .campaign-image img {
+    max-width: 320px;
+    transform: none;
+  }
 }
 
 /* --- SOCIAL BUTTONS --- */
